@@ -13,12 +13,16 @@ http.createServer(
             if(err)
                 throw err;
         })
-
-        res.writeHead(200, {'Content-Type':'text/html; charset=UTF-8'});
-        res.write('Nome: ' + nome + '<br>');
-        res.write('Sobrenome: ' + sobrenome);
-        res.end();
+        fs.readFile('reposta14.html',
+            function(err,pagina) {
+            res.writeHead(200, {'Content-Type':'text/html; charset=UTF-8'});
+            res.write('Nome: ' + nome + '<br>');
+            res.write('Sobrenome: ' + sobrenome);
+            res.end();
+            }
+        );
     }
+    
 ).listen(8080);
 
 console.log('Servidor iniciado na porta 8080. Pressione Ctrl + C para encerrar.');
