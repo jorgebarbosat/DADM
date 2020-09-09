@@ -13,12 +13,11 @@ http.createServer(
             if(err)
                 throw err;
         })
-        fs.readFile('reposta14.html',
-            function(err,pagina) {
-            res.writeHead(200, {'Content-Type':'text/html; charset=UTF-8'});
-            res.write('Nome: ' + nome + '<br>');
-            res.write('Sobrenome: ' + sobrenome);
-            res.end();
+        fs.readFile('resposta14.html',
+            function(err, pagina) {
+                res.writeHead(200, {'Content-Type':'text/html; charset=UTF-8'});
+                res.write(pagina);
+                res.end();
             }
         );
     }

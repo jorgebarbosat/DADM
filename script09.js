@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-fs.open('arquivo1.txt', 'w', 
+fs.open('arquivooutro.txt', 'w', 
     function(err,file) {
             if (err)
             throw err;
