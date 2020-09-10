@@ -8,7 +8,7 @@ var sexo = 'F';
 
 http.createServer(
     function(req, res) {
-        res.writeHead(200, {'Content-Type':'text/html'; charset=UTF-8'});
+        res.writeHead(200, {'Content-Type':'text/html; charset=UTF-8'});
 
         res.write('<html>');
         res.write('<head>');
