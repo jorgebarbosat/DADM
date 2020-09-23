@@ -14,7 +14,47 @@
             <p>
                 <label for="nome"> Nome:</label>
                 <input type="text" id="nome" name="nome" size="30" autofocus>
+                <select name="ano" id="ano">
+                    <script>
+                        var d = new Date();
+                        var anoatual = d.getFullYear();
+                        var anoantigo = anoatual - 25;
+
+                        for (i = anoantigo; i <= anoatual; i++)
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    </script>
+                    
+                </select>
             </p>
+            <fieldset>
+                <legend>Espécie</legend>
+                
+                <input type="radio" id="canina" name="especie" value="Canina">
+                <label for="canina">Canina</label>
+
+                <input type="radio" id="felina" name="especie" value="felina">
+                <label for="felina">Felina</label>
+            </fieldset>
+            <p>
+                <label for="raca"> Raça</label>
+                <input type="text" id="raca" name="raca" size="25" list="listaRacas">
+                <datalist id="listaRacas">
+                    <option value="Street Dog"></option>
+                    <option value="Street Cat"></option>
+                    <option value="Poodle"></option>
+                    <option value="Pastor Alemão"></option>
+                    <option value="Pastor Belga"></option>
+                    <option value="Bulldog"></option>
+                    <option value="Siamês"></option>
+                    <option value="Ângora"></option>
+                    <option value="Pug"></option>
+                    <option value="Fila Brasileiro"></option>
+                </datalist>
+            </p>
+            <p><label for="foto">Foto do Animal:</label>
+                <input type="file" id="foto" name="foto">
+            </p>
+            <p><input type="submit" value="Cadastrar Animal"></p>
         </fieldset>
     </form>
 </body>
