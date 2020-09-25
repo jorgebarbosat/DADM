@@ -10,10 +10,10 @@ http.createServer(
 
             form.parse(req, 
                 function(err, fields, files) {
-                    var arquivoatual = files.foto.path;
-                    var arquivonovo = 'C:\Users\jorge\Documents\DADM' + files.foto.name;
+                    var arquivoAtual = files.foto.path;
+                    var arquivoNovo = 'C:/Users/jorge/Documents/DADM/' + files.foto.name;
 
-                    fs.rename(arquivoatual, arquivonovo, function(err) {
+                    fs.rename(arquivoAtual, arquivoNovo, function(err) {
                         if (err)
                           throw err;
                     }
@@ -24,6 +24,7 @@ http.createServer(
                     res.write('<p>Ano de nascimento: ' + fields.ano + '</p>');
                     res.write('<p>Espécie: ' + fields.especie + '</p>');
                     res.write('<p>Raça: ' + fields.raca + '</p>');
+                    res.write('<p>Foto do animal: <img src="' +  + '"></p>');
                     res.end();
                 }
             );
